@@ -1,9 +1,11 @@
 # WorkTimeMonitor
-#Task Schedule Command
-w![TaskSchedule2](https://github.com/armagansavas/WorkTimeMonitor/assets/90199849/ba323ee1-d42c-4337-84f8-af2a9e2b66f0)
+
+![TaskSchedule2](https://github.com/armagansavas/WorkTimeMonitor/assets/90199849/ba323ee1-d42c-4337-84f8-af2a9e2b66f0)
 ![TaskSchedule1](https://github.com/armagansavas/WorkTimeMonitor/assets/90199849/7e5ca559-f919-40de-adb4-bb5c2f6d7bca)
 ![TaskSchedule3](https://github.com/armagansavas/WorkTimeMonitor/assets/90199849/22871426-d5aa-40be-9eaf-355d19161ae2)
-script "c:\temp\run_hidden.vbs" "C:\temp\ActivityTracker.ps1"
+
+
+# TaskSchedule Üzerinde Çalıştırışacal komut : wscript "c:\temp\run_hidden.vbs" "C:\temp\ActivityTracker.ps1"
 
 
 
