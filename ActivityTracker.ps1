@@ -99,7 +99,7 @@ Add-Type @"
         }
     }
 "@
-
+Write-Log -Verbose -Message "Started Win32_ActivityStats"
 function Get-IdleDuration {
     $lii = New-Object UserInputInfo+LASTINPUTINFO
     $lii.cbSize = [System.Runtime.InteropServices.Marshal]::SizeOf($lii)
@@ -145,13 +145,13 @@ while ($totalTime -lt $targetDuration) {
 $activeMinutes = [math]::Round($global:activeTime / 60, 2)
 $inactiveMinutes = [math]::Round($global:inactiveTime / 60, 2)
 
-Write-Host "Total Active Time: $($activeMinutes) minutes"
-Write-Host "Total Inactive Time: $($inactiveMinutes) minutes"
+Write-Log -Verbose -Message "Total Active Time: $($activeMinutes) minutes"
+Write-Log -Verbose -Message "Total Inactive Time: $($inactiveMinutes) minutes"
 #Wmi 'e verileri kayıt eder
 Set-WmiInstance -Namespace root\cimv2 -Class $NewClassName -Argument @{
     ActiveTime = $activeMinutes
     InactiveTime = $inactiveMinutes
     ScriptLastRan = $Date
 } 
-
+Write-Log -Verbose -Message "Stopped Win32_ActivityStats"
 Get-WmiObject -Class $NewClassName | Select-Object ActiveTime, InactiveTime, Timestamp, ScriptLastRan | Sort-Object ScriptLastRan | ft
